@@ -12,24 +12,71 @@
     </nav>
     <main>
         <h2>Vacation Contest Sign-Up Form</h2>
-        <form> <!-- TODO: Set Action and Method Properties -->
+        <form method="GET" action="results.html">
             <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
-                <!-- TODO: Create a "lastname" input with type "text" -->
+                <label for="firstname">Your First Name</label><span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" required minlength="2" maxlength="35">
+                
+                <label for="lastname">Your Last Name</label><span class="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" required required minlength="2" maxlength="35">
             </div>
-            <!-- TODO: Make fieldset and legend -->
-            <!-- Todo: Email Input -->
-            <!-- Todo: Street Address Input -->
-            <!-- Todo: City, State, and Zip Inputs -->
-
+            <label for="age">Your Age</label required><span class="required-field">*</span>
+            <input type="number" id="age" name="age" required min="21" max="120">
+            <h5>Applicant must be age 21 or older to enter the Contest!</h5>
+            <fieldset>
+                <legend>Your Contact Info</legend>
+                <label for="email">Your Email</label><span class="required-field">*</span>
+                <input type="email" id="email" name="email" required>
+            </fieldset>
+            
+            <label>Your Street Address</label><input type="text" name="address">
+            
+            <label>Your City</label><input type="text" name="City">
+            <label>Your State</label>
+            <select name="state">
+                <option value="AK">Alaska</option>
+                <option value="CA">California</option>
+                <option value="CT">Conneticut</option>
+            </select>
+            <label>Your Zip Code</label>
+            <input title="5-Digit US ZIP Code" type="text" name ="Zip" [0-9]{5}>
             <!-- TODO: Second fieldset -->
-            <!-- TODO: Radio buttons for selecting preferred destination -->
+            <fieldset>
+                <legend>
+                    Your Preferences
+                </legend>
+                <h4>Choose your location</h3>
+                <input type="radio" id="aruba" name="location" value="Aruba" checked>
+                <label for="Aruba">Aruba</label>
+                <input type="radio" id="japan" name="location" value="Japan">
+                <label for="Japan">Japan</label>
+                <input type="radio" id="reykjavik" name="location" value="Reykjavik">
+                <label for="reykjavik">Reykjavik</label>
+                <input type="radio" id="new zealand" name="location" value="New Zealand">
+                <label for="new zealand">New Zealand</label>
+            </fieldset>
+
             <!-- TODO: Color input for selecting favorite color -->
+            <label for="color">Favorite Color</label>
+            <input name="color" type="color">
             <!-- TODO: Checkboxes for selecting extra add-ons -->
             
-            <!-- TODO: Submit Button -->
+            <fieldset>
+                <legend>Add-ons and Extras</legend>
+            <label for="sauna">Sauna Access</label>
+            <input type="checkbox" id="extra" name="extra" value="sauna">
+            <label for="hot Tub">In-room Hot Tub</label>
+            <input type="checkbox" id="extra" name="extra" value="hot Tub">
+            <label for="Suicide">A peaceful permanent escape from this mortal coil</label>
+            <input type="checkbox" id="extra" name="extra" value="Suicide">
+        </fieldset>
+            <h4>Please, input a secret code of your choice.</h4>
+            <label for="password">Your Secret Code (must be 6 alphanumeric characters)</label><span class="required-field">*</span>
+            <input type="password" required title="6 Alphanumeric Character Passcode" pattern="{3}">
+            
+            <input type="submit" id="submit" name="submit" value="Enter the Contest">
         </form>
+           
     </main>
     <footer>
         <h2>Resource Attributions</h2>
